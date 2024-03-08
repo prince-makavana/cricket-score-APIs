@@ -24,7 +24,7 @@ const sendOtpController = async (req, res) => {
   try {
     const { phone } = req.body;
     const otp = 1234 // Hardcoded OTP
-    otpStore[phone] = { otp, expiry: Date.now() + 3000 };
+    otpStore[phone] = { otp, expiry: Date.now() + 60000 };
     res.status(200).json({ success: true, otp });
   } catch (error) {
     res.status(500).json({ error: error.message });
